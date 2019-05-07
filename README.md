@@ -58,3 +58,13 @@ nodeRegistration:
 ```
 
 Of cource, **cloud-provider: aws** exists in kubeletExtraArgs
+
+## 3. Initiate Cluster
+In master,
+```
+kubeadm init --config master-config.yaml
+```
+In worker,
+```
+kubeadm init --config node-config.yaml
+```
