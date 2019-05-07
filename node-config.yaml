@@ -1,0 +1,13 @@
+---
+apiVersion: kubeadm.k8s.io/v1beta1
+kind: JoinConfiguration
+discovery:
+  bootstrapToken:
+    token: <DETACTED>
+    apiServerEndpoint: "10.43.0.20:6443" # API Server endpoint of master. It can be LB Public DNS
+    caCertHashes:
+      - "<DETACTED>"
+nodeRegistration:
+  name: ip-10-43-0-31.ap-northeast-2.compute.internal # Private DNS name of each AWS Worker instances.
+  kubeletExtraArgs:
+    cloud-provider: aws

@@ -1,0 +1,39 @@
+kind: ClusterConfiguration
+apiVersion: kubeadm.k8s.io/v1beta1
+apiServer:
+  extraArgs:
+    authorization-mode: Node,RBAC
+    cloud-provider: aws
+  timeoutForControlPlane: 4m0s
+certificatesDir: /etc/kubernetes/pki
+clusterName: kubernetes
+controlPlaneEndpoint: ""
+controllerManager:
+  extraArgs:
+    cloud-provider: aws
+dns:
+  type: CoreDNS
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+imageRepository: k8s.gcr.io
+kubernetesVersion: v1.14.1
+networking:
+  dnsDomain: cluster.local
+  podSubnet: 192.168.0.0/16 # Pod Subnet
+  serviceSubnet: 10.96.0.0/12
+scheduler: {}
+
+---
+kind: ClusterStatus
+apiVersion: kubeadm.k8s.io/v1beta1
+apiEndpoints:
+  ip-10-43-0-20.ap-northeast-2.compute.internal: # Private DNS of Master Instance
+    advertiseAddress: 10.43.0.20 # Join Advertise Address
+    bindPort: 6443
+---
+apiVersion: kubeadm.k8s.io/v1beta1
+kind: InitConfiguration
+nodeRegistration:
+  kubeletExtraArgs:
+    cloud-provider: aws
