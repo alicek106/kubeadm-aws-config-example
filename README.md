@@ -70,6 +70,6 @@ kubeadm init --config node-config.yaml
 ```
 
 ### Reference
-https://blog.scottlowe.org/2019/02/18/kubernetes-kubeadm-and-the-aws-cloud-provider/
-https://github.com/kubernetes/cloud-provider-aws
-https://blog.heptio.com/setting-up-the-kubernetes-aws-cloud-provider-6f0349b512bd
+- https://blog.scottlowe.org/2019/02/18/kubernetes-kubeadm-and-the-aws-cloud-provider/
+- https://github.com/kubernetes/cloud-provider-aws
+- https://blog.heptio.com/setting-up-the-kubernetes-aws-cloud-provider-6f0349b512bd
