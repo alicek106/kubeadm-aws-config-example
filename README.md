@@ -69,6 +69,23 @@ In worker,
 kubeadm init --config node-config.yaml
 ```
 
+## 4. Reload configuration for specific component
+You can reload configuration of each component (or all). 
+
+For example, you can update api-server's configuration using below command. master.yaml is configuration file.
+
+```
+$ kubeadm init phase control-plane apiserver --config master.yaml
+```
+
+For more description of this command, see 
+
+```
+$ kubeadm init phase --help
+```
+
+But, `kubeadm-config` configmap of `kube-system` namespace doesn't changed automatically. :D
+
 ### Reference
 - https://blog.scottlowe.org/2019/02/18/kubernetes-kubeadm-and-the-aws-cloud-provider/
 - https://github.com/kubernetes/cloud-provider-aws
