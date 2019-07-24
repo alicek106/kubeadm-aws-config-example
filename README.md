@@ -106,3 +106,4 @@ But, `kubeadm-config` configmap of `kube-system` namespace doesn't changed autom
 - https://blog.scottlowe.org/2019/02/18/kubernetes-kubeadm-and-the-aws-cloud-provider/
 - https://github.com/kubernetes/cloud-provider-aws
 - https://blog.heptio.com/setting-up-the-kubernetes-aws-cloud-provider-6f0349b512bd
+- https://stackoverflow.com/questions/46810779/kubernetes-unable-to-register-node-with-cloud-provider-aws
