@@ -31,6 +31,7 @@ resource "aws_instance" "master" {
 ###############################
 
 resource "aws_elb" "kubeadm-api-elb" {
+    count = 0
     name = "kubeadm-api-elb"
     instances = ["${aws_instance.master.*.id}"]
     subnets = ["${aws_subnet.kubeadm-subnet.id}"]
@@ -99,6 +100,6 @@ resource "aws_security_group" "kubeadm-api-sg" {
 ## Outputs
 ############
 
-output "kubernetes_api_dns_name" {
-  value = "${aws_elb.kubeadm-api-elb.dns_name}"
-}
+# output "kubernetes_api_dns_name" {
+#  value = "${aws_elb.kubeadm-api-elb.dns_name}"
+# }
