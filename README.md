@@ -82,7 +82,7 @@ kubeadm init --config master-config.yaml
 ```
 In worker,
 ```
-kubeadm init --config node-config.yaml
+kubeadm join --config node-config.yaml
 ```
 
 ## 4. Reload configuration for specific component
