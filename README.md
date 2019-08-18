@@ -22,7 +22,21 @@ ip-10-43-0-20.ap-northeast-2.compute.internal
 ```
 
 ## 1. Master Configuration
-You can find fully described YAML file in master-config.yaml.
+You can find fully described YAML file in below link.
+
+> https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2
+
+..or, you can manually print example YAML using below command.
+
+> kubeadm config print init-default
+
+Explanation for all YAML options can be found in below link.
+
+> https://github.com/kubernetes/kubernetes/blob/master/cmd/kubeadm/app/apis/kubeadm/types.go
+
+---
+
+Anyway, let's see `--cloud-provider` option in YAML file.
 
 In extraArgs, **cloud-provider: aws** shoud exists for (1) controller, (2) API server and (3) kubelet.
 
